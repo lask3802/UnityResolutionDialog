@@ -135,10 +135,10 @@ namespace NewResolutionDialog.Scripts.Controller
                 var height = int.Parse(resParts[1].Trim());
 
                 // skip resolutions that won't fit in windowed modes
-                if (isWindowed && (width >= systemWidth || height >= systemHeight))
+                /*if (isWindowed && (width >= systemWidth || height >= systemHeight))
                     continue;
                 if (isFullScreenWindow && (width > systemWidth || height > systemHeight))
-                    continue;
+                    continue;*/
 
                 // resolution
                 var resString = GetResolutionString(width, height);
@@ -389,7 +389,7 @@ namespace NewResolutionDialog.Scripts.Controller
                 var height = int.Parse(resolution[1]);
                 var screenWidth = Display.main.systemWidth;
                 var screenHeight = Display.main.systemHeight;
-                //Debug.LogError("cur w/h: " + width + "x" + height + ", max w/h: " + screenWidth + "x" + screenHeight + ", Scr w/h: " + Screen.width + "x" + Screen.height + 
+                //Debug.LogError("cur w/h: " + width + "x" + height + ", max w/h: " + screenWidth + "x" + screenHeight + ", Scr w/h: " + Screen.width + "x" + Screen.height +
                 //    ", DspR w/h: " + Display.main.renderingWidth + "x" + Display.main.renderingHeight + ", DspS w/h: " + Display.main.systemWidth + "x" + Display.main.systemHeight);
 
                 if (width >= screenWidth || height >= screenHeight)
@@ -491,7 +491,7 @@ namespace NewResolutionDialog.Scripts.Controller
         }
         #endregion
 
-        #region Update After Frame 
+        #region Update After Frame
         void UpdateDialogAfterEndOfFrame()
         {
             StartCoroutine(UpdateDialogAfterEndOfFrameCoroutine());
