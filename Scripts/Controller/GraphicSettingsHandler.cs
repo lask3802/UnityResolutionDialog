@@ -476,8 +476,8 @@ namespace NewResolutionDialog.Scripts.Controller
                 selectedHz = "0";
 
             var resolution = selectedRes.Split(new char[] { 'x' });
-            var width = int.Parse(resolution[0]);
-            var height = int.Parse(resolution[1]);
+            var width = int.Parse(resolution[0].Trim());
+            var height = int.Parse(resolution[1].Trim());
             var hz = int.Parse(selectedHz);
             SetResolution(width, height, GetSelectedFullScreenMode(), hz);
         }
